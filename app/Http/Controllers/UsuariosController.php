@@ -13,8 +13,12 @@ class UsuariosController extends Controller
 
     public function store(Request $request){
         $inputs = $request->input();
-        $respuesta = Usuario::create($inputs);
-        return $respuesta;
+        $User = Usuario::create($inputs);
+        return response()->json([
+            'data'=>$User,
+            'mensaje'=>true, "Estudiante guardado correctamente."
+
+        ]);
     }
 
     public function update(Request $request, $id){
@@ -40,7 +44,7 @@ class UsuariosController extends Controller
         }else{
             return response()->json([
                 'error'=>true,
-                'mensaje'=>true, "No existe el usuario"
+                'mensaje'=>true, "No existe el usuario."
             ]);
         }
     }
