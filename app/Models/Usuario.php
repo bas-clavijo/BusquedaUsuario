@@ -10,7 +10,14 @@ class Usuario extends Model
     use HasFactory;
 
     public $table ="usuarios";
-    protected $fillable = array("*");
+    protected $fillable = [
+        'id',
+        'nombre',
+        'correo',
+        'contraseña',
+        'foto',
+        'estado'
+    ];
     
     public function cargos(){
         return $this-> belongsToMany(Cargo::class, "cargo_usuario");
