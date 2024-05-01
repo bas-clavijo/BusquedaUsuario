@@ -17,7 +17,10 @@ class UsuarioFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+           'nombre'=>$this->faker->nombre(),
+           'correo'=>$this->faker->correo(),
+           'foto'=>$this->faker->foto(),
+           'estado'=>$this->faker->estado(),
         ];
     }
 }
