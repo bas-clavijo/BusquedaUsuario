@@ -19,8 +19,9 @@ class UsuarioFactory extends Factory
         return [
            'nombre'=>$this->faker->name(),
            'correo'=>$this->faker->email(),
+           'contraseña' => bcrypt('password'),
            'foto'=>$this->faker->name(),
-           'estado' => $this->faker->randomElement(['Activo', 'Inactivo']),
+           'estado' => $this->faker->boolean(),
         ];
     }
 }
