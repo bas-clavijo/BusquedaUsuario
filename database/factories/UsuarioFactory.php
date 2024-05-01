@@ -20,7 +20,7 @@ class UsuarioFactory extends Factory
            'nombre'=>$this->faker->name(),
            'correo'=>$this->faker->email(),
            'foto'=>$this->faker->name(),
-           'estado'=>$this->faker->state(),
+           'estado' => $this->faker->randomElement(['Activo', 'Inactivo']),
         ];
     }
 }
