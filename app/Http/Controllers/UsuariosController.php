@@ -26,12 +26,21 @@ class UsuariosController extends Controller
             $User->foto = $request->foto;
             $User->estado = $request->estado;
 
-            return $User->save();
+            if($User->save()){
+                return response()->json([
+                    'data'=>$User,
+                    'mensaje'=>true, "Usuario encontrado y actualizado con exito."
+                ]); 
+            }else{
+                return response()->json([
+                    'error'=>true,
+                    'mensaje'=>true, "Usuario no encontrado y no actualizado."
+                ]);
+            }
         }else{
             return response()->json([
                 'error'=>true,
                 'mensaje'=>true, "No existe el usuario"
-
             ]);
         }
     }
