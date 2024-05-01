@@ -19,7 +19,7 @@ class UsuarioFactory extends Factory
         return [
            'nombre'=>$this->faker->name(),
            'correo'=>$this->faker->email(),
-           'foto'=>$this->faker->photo(),
+           'foto'=>$this->faker->name(),
            'estado'=>$this->faker->state(),
         ];
     }
