@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("correo")->unique();
             $table->string("contraseña");
             $table->string("foto")->nullable();
-            $table->boolean("activo")->default(true);
+            $table->boolean("estado")->default(true);
             $table->timestamps();
         });
     }
