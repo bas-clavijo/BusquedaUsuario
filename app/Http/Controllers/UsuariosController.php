@@ -16,7 +16,7 @@ class UsuariosController extends Controller
         if(isset($User)){
             return response()->json([
                 'data'=>$User,
-                'mensaje'=>true, "El usuario a sido encontrado."
+                'mensaje'=>"El usuario a sido encontrado."
             ]);
         }else{
             return response()->json([
