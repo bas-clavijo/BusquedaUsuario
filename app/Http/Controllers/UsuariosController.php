@@ -21,7 +21,7 @@ class UsuariosController extends Controller
         }else{
             return response()->json([
                 'error'=>true,
-                'mensaje'=>true, "No existe el usuario"
+                'mensaje'=>"No existe el usuario"
             ]);
         }
     }
