@@ -22,11 +22,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->input();
-        $inputs->password = Hash::make(trim($request->password));
+        $inputs["password"] = Hash::make(trim($request->password));
         $User = User::create($inputs);
         return response()->json([
             'data'=>$User,
-            'mensaje'=>true, "Guardado correctamente."
+            'mensaje'=>true, "Registrado correctamente"
         ]);
     }
 
