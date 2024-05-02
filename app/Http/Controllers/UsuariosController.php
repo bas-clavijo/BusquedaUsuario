@@ -11,6 +11,23 @@ class UsuariosController extends Controller
        return Usuario::all();
     }
 
+    public function show($id){
+        $User = Usuario::find($id);
+        if(isset($User)){
+            return response()->json([
+                'data'=>$User,
+                'mensaje'=>true, "El usuario a sido encontrado."
+            ]);
+        }else{
+            return response()->json([
+                'error'=>true,
+                'mensaje'=>true, "No existe el usuario"
+            ]);
+        }
+    }
+
+
+
     public function store(Request $request){
         $inputs = $request->input();
         $User = Usuario::create($inputs);
