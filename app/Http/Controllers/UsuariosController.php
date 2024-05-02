@@ -65,4 +65,31 @@ class UsuariosController extends Controller
             ]);
         }
     }
+
+    public function destroy($id){
+        $User = Usuario::find($id);
+        if(isset($User)){
+            $res=Usuario::destroy($id);
+            if($res){
+                return response()->json([
+                    'data'=>$User,
+                    'mensaje'=>"El usuario ha sido elimiado"
+                ]);
+            }else{
+                return response()->json([
+                    'data'=>$User,
+                    'mensaje'=>"El usuario no existe"
+                ]);
+            }
+            return response()->json([
+                'data'=>$User,
+                'mensaje'=>"El usuario a sido encontrado."
+            ]);
+        }else{
+            return response()->json([
+                'error'=>true,
+                'mensaje'=>"No existe el usuario"
+            ]);
+        }
+    }
 }
