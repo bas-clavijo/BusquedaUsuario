@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("nombre");
             $table->string("correo")->unique();
             $table->string("contraseña");
-            $table->string("foto")->nullable();
+            $table->longText("foto")->nullable();
             $table->boolean("estado")->default(true);
             $table->timestamps();
         });
