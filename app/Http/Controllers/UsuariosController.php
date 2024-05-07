@@ -43,7 +43,9 @@ class UsuariosController extends Controller
         if(isset($User)){
             $User->nombre = $request->nombre;
             $User->correo = $request->correo;
+            $User->correoconfirmar = $request->correoconfirmar; //Dato agregado
             $User->contraseña = $request->contraseña;
+            $User->confContraseña = $request->confContraseña; //Dato agregado
             $User->foto = $request->foto;
             $User->estado = $request->estado;
 
