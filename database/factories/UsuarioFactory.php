@@ -22,6 +22,11 @@ class UsuarioFactory extends Factory
            'contraseña' => bcrypt('password'),
            'foto'=>$this->faker->name(),
            'estado' => $this->faker->boolean(),
+
+           // Se agregan los campos faltantes
+           'cargo' => $this->faker->jobTitle(),
+           'correoconfirmar' => $this->faker->unique()->safeEmail(),
+           'confContraseña' => bcrypt('password'),
         ];
     }
 }
