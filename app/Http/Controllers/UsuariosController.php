@@ -48,6 +48,7 @@ class UsuariosController extends Controller
             $User->confContraseña = $request->confContraseña; //Dato agregado
             $User->foto = $request->foto;
             $User->estado = $request->estado;
+            $User->cargo = $request->cargo; // Dato agregado
 
             if($User->save()){
                 return response()->json([

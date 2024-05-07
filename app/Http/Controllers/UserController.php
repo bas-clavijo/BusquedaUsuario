@@ -23,6 +23,11 @@ class UserController extends Controller
     {
         $inputs = $request->input();
         $inputs["password"] = Hash::make(trim($request->password));
+        // Agregar los nuevos campos al arreglo de entrada
+        $inputs["correoconfirmar"] = $request->correoconfirmar;
+        $inputs["cargo"] = $request->cargo;
+        $inputs["confContraseña"] = $request->confContraseña;
+        
         $User = User::create($inputs);
         return response()->json([
             'data'=>$User,
@@ -59,6 +64,10 @@ class UserController extends Controller
             $User->name = $request->name;
             $User->email = $request->email;
             $User->password = Hash::make($request->password);
+            // Agregar los nuevos campos al objeto usuario
+            $User->correoconfirmar = $request->correoconfirmar;
+            $User->cargo = $request->cargo;
+            $User->confContraseña = $request->confContraseña;
 
             if($User->save()){
                 return response()->json([
