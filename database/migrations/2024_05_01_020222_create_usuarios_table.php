@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string("nombre");
             $table->string("correo")->unique();
             $table->string("contraseña");
+            $table->string("confirmarcorreo")->nullable(); // Nuevo campo
+            $table->string("cargo")->nullable(); // Nuevo campo
+            $table->string("confirmarcontraseña")->nullable(); // Nuevo campo
             $table->longText("foto")->nullable();
             $table->boolean("estado")->default(true);
             $table->timestamps();
