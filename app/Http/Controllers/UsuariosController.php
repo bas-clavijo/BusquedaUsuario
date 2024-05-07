@@ -16,7 +16,7 @@ class UsuariosController extends Controller
         if(isset($User)){
             return response()->json([
                 'data'=>$User,
-                'mensaje'=>"El usuario a sido encontrado."
+                'mensaje'=>"El usuario ah sido encontrado."
             ]);
         }else{
             return response()->json([
@@ -33,7 +33,7 @@ class UsuariosController extends Controller
         $User = Usuario::create($inputs);
         return response()->json([
             'data'=>$User,
-            'mensaje'=>true, "Estudiante guardado correctamente."
+            'mensaje'=>true, "Usuario guardado correctamente."
 
         ]);
     }

@@ -16,7 +16,10 @@ class Usuario extends Model
         'correo',
         'contraseña',
         'foto',
-        'estado'
+        'estado',
+        'correoconfirmar', // Agregado
+        'cargo', // Agregado
+        'confContraseña', // Agregado
     ];
     
     public function cargos(){
